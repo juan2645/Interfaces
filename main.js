@@ -150,6 +150,6 @@ function eliminarObstaculos() {
   }
 }
 
-setInterval(eliminarObstaculos, 0.01);
+setInterval(eliminarObstaculos, 1);
 
 
