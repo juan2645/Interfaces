@@ -1,0 +1,414 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+
+#contenedor,
+#cielo,
+#arboles,
+#piso {
+  width: 100%;
+}
+
+
+#cielo {
+  height: 50%;
+  width: 100%; 
+  background: url("images/cielo.png") repeat-x;
+  background-size: 894px 100%; 
+  position: absolute;
+  animation: sky 25s linear infinite;
+  z-index: 0;
+  margin-top: 175px;
+}
+
+
+@keyframes sky {
+  0% {
+    background-position: 894px
+  }
+  100% {
+    background-position: 0
+  }
+}
+
+
+#arboles {
+  position: absolute;
+  bottom: -10px;
+  top: 105px; 
+  z-index: 1;
+  width: 100%; 
+  height: 40%;   
+  margin-top: 151px;
+  margin-right: -20px;
+  background: url("images/arboles.png") repeat-x;
+  background-size: 600px 100%; 
+  animation: movimientoArboles 10s linear infinite;
+}
+
+  
+@keyframes movimientoArboles {
+  100% {
+    background-position-x: -1200px;
+  }
+}
+
+
+#piso {
+  height: 25%; 
+  width: 100%;
+  background: url("images/suelo.png") repeat-x;
+  background-size: 648px 100%;
+  animation: movimientoPiso 4s linear infinite;
+  position: absolute;
+  bottom: -6px; 
+  margin-right: -20px;
+  z-index: 2;
+}
+
+
+@keyframes movimientoPiso {
+  0% {
+    background-position: 648px
+  }
+  100% {
+    background-position: 0
+  }
+}
+
+
+#personaje {
+  width: 180px;
+  height: 200px;
+  z-index: 4;
+  position: absolute;
+  bottom: 11%;  
+  left: 100px;
+  background: url("images/runner.png") repeat-x;
+}
+
+
+.run {
+  animation: run .6s steps(6) infinite;
+}
+
+
+.saltar {
+  animation: saltar 500ms cubic-bezier(0,0,.5,1) forwards; 
+}
+
+
+.caer {
+  animation: caer 500ms cubic-bezier(0,0,.5,1) forwards;
+}
+
+@keyframes saltar {
+  from {
+    bottom: 10%;
+  }
+  to {
+    bottom: 25%;
+  }
+}
+
+
+@keyframes caer {
+  from {
+    bottom: 30%;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+
+@keyframes run {
+  0% {
+    background-position: 0
+  }
+  100% {
+    background-position: -1130px
+  }
+}
+
+
+.tronco {
+  position: absolute;
+  bottom: 45px;
+  width: 100px;
+  height: 100px;
+  background-image: url("images/tronco.png");
+  animation: movimientoObstaculo 5s forwards linear;
+  z-index: 3;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+}
+
+
+@keyframes movimientoObstaculo {
+  from {
+    right: 0%;
+  }
+   to {
+    right: 100%;
+  }
+}
+
+
+.piedra {
+  position: absolute;
+  bottom: 78px;
+  width: 80px;
+  height: 80px;
+  background-image: url("images/piedra.png");
+  animation: movimientoObstaculo 5s forwards linear;
+  z-index: 3;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+}
+
+
+@keyframes movimientoObstaculo {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+} 
+
+
+.energia {
+  position: absolute;
+  bottom: 290px;
+  width: 60px;
+  height: 60px;
+  background-image: url("images/foco.png");
+  animation: movimientoFoco 3.5s forwards linear;
+  z-index: 3;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+}
+
+
+@keyframes movimientoFoco {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+} 
+
+/* .ocult {
+  opacity: 0;
+}
+
+.desocultar {
+  opacity: 1;
+}  */
+
+
+.puntaje {
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  top: 7px;
+  right: 30px;
+}
+
+
+.puntaje span {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+
+.timePlay {
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  height: 70px;
+  width: 30%;
+  left: 81%;
+  bottom: -42px;
+  align-content: center;
+}
+
+
+.oculto {
+  visibility: hidden;
+}
+
+  
+.desOculto {
+  visibility: visible;
+}
+
+  
+#barra-superior {
+  position: fixed;
+  top: 5px; 
+  left: 5px;  
+  width: calc(100% - 10px); 
+  height: 40px;
+  background-color: rgb(61, 134, 164);
+  padding-right: 60px; 
+  box-sizing: border-box;  
+  z-index: 2; 
+}
+
+  
+#contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+  
+#barra-superior > #contenedor > div {
+  margin-right: 0px;
+}
+
+  
+#barra-superior #puntaje {
+  margin-left: 5px;
+} 
+
+
+.musicPlay {
+  position: absolute;
+  background-color: white;
+  margin-left: 40px; 
+  margin-top: 7px;
+  font-size: medium;
+  z-index: 10;
+}
+
+
+.cartel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 230px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+
+#cartel .boton-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+
+#reiniciarBtn {
+  margin-left: 60px;
+}
+  
+ 
+.oculto {
+  display: none;
+}
+  
+ 
+#pantalla-presentacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+
+#pantalla-presentacion::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+}
+
+
+#pantalla-presentacion > img {
+  position: absolute;
+  bottom: 0; 
+  left: 5px; 
+  transform: translate(0%, 0%); 
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#juego {
+  display: none;
+}
+
+
+.botones {
+  position: absolute;
+  bottom: 370px;
+  left: 1120px;
+}
+
+
+.boton {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+
+.instrucciones {
+  color: white;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+
+#body-instrucciones {
+  background-color: black;
+  color: white;
+}
+
+
+#pantalla-instrucciones {
+  background-color: black;
+}

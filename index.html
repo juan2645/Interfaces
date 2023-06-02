@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 Entregable Juego Horizontal-Scroller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="pantalla-presentacion">
+    <img src="images/pantalla_inicio.png" alt="Pantalla de Presentación">
+    <div class="botones">
+      <button id="botonJugar" class="boton">Jugar</button>
+      <button id="botonInstrucciones" class="boton">Instrucciones</button>
+      <button id="botonSalir" class="boton">Salir</button>
+    </div>
+  </div>
+  <div id="juego">
+    <div id="contenedor">
+        <div id="cielo"></div>
+        <div id="arboles"></div>
+        <div id="piso"></div>
+        <div id="personaje" class="run"></div>
+        <div id="barra-superior">
+            <button id="botonMusica" class="musicPlay" onclick="musicaDeFondo('musicaJuego'); this.blur();">Activar o desactivar música</button>
+            <div id="cartel" class="cartel oculto">
+              <p>Se acabó el tiempo.</p>
+              <p>¡Juego finalizado!</p>
+              <p>Lograste</p>
+              <div class="boton-container">
+                <button id="reiniciarBtn">Volver a la Pantalla Principal</button>
+              </div>
+            </div>
+            <div class="timePlay">
+              <span id="cartel2">Tiempo: <span id="tiempo"> 0:30</span> </span>
+            </div>
+            <div class="puntaje">Puntos: <span id="puntaje">0</span></div>
+        </div>  
+        <img src="images/runner_golpeado.png" id="imagenChoque" style="display: none;">
+        <audio src="sounds/crash.wav" id="sonidoChoque"></audio>
+        <audio src="sounds/crashEnergy.wav" id="sonidoEnergia"></audio>
+        <audio id="musicaJuego" src="sounds/sonidoJuego.wav" ></audio>
+        <audio src="sounds/saltok.wav" id="sonidoAlegria"></audio>
+    </div>
+  </div>
+  <script src="Personaje.js"></script>
+  <script src="Runner.js"></script>
+  <script src="Obstaculo.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

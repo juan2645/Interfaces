@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones del Juego</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body-instrucciones">
+    <div id="pantalla-instrucciones">
+        <div class="instrucciones">
+            <h1>Instrucciones del Juego</h1>
+            <p><strong>Inicio del juego:</strong></p>
+            <ul>
+                <li>Abre el archivo INDEX.HTML del juego en tu navegador web.</li>
+                <li>Asegúrate de que el juego esté cargado correctamente y visible en la ventana del navegador.</li>
+            </ul>
+            <p><strong>Controles del juego:</strong></p>
+            <ul>
+                <li>Correr: el personaje corre automáticamente al inicio del juego.</li>
+                <li>Saltar: Presiona la barra espaciadora para hacer que el personaje realice un salto.</li>
+                <li>Durante el salto, el personaje intentará evitar los obstáculos para tener un salto exitoso y sumar puntos.</li>
+                <li>Caer: El personaje caerá automáticamente después de completar un salto o si no se realizó ningún salto.</li>
+            </ul>
+            <p><strong>Objetivos y puntuación:</strong></p>
+            <ul>
+                <li>El objetivo principal del juego es correr y evitar obstáculos para obtener la mayor puntuación posible.</li>
+                <li>Cada vez que el personaje realice un salto exitoso sobre un obstáculo (tronco o piedra), se sumarán 10 puntos a la puntuación total.</li>
+                <li>Si el personaje choca con un obstáculo, se restarán 10 puntos de la puntuación total.</li>
+            </ul>
+            <p><strong>Colisión con obstáculos:</strong></p>
+            <ul>
+                <li>Si el personaje choca con un tronco o una piedra, se reproducirá un sonido y se mostrará una imagen intermitente con el personaje golpeado.</li>
+                <li>Además, se restarán 10 puntos de la puntuación total.</li>
+                <li>El personaje puede levantarse rapidamente del golpe presionando la barra espaciadora para activar nuevamente el salto.</li>
+            </ul>
+            <p><strong>Obtención de tiempo:</strong></p>
+            <ul>
+                <li>Si el personaje agarra una lámpara de energía, se reproducirá un sonido de energía.</li>
+                <li>Al obtener una lámpara de energía se le sumarán 5 segundos al tiempo de juego.</li>
+            </ul>
+            <p><strong>Finalización del juego:</strong></p>
+            <p>El juego finaliza cuando se agota el tiempo. Se mostrará un mensaje con el puntaje obtenido y la opción de retornar a la pantalla Principal.</p>
+            <button onclick="window.location.href='index.html'">Volver a la Pantalla Principal</button>
+        </div>
+    </div>
+</body>
+</html>
